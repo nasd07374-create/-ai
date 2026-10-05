@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>HABKA Admin</title>
+<style>body{margin:0;background:#060608;color:#fff;font-family:Arial,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh}.box{text-align:center}a{display:inline-block;background:#9d4edd;color:#fff;padding:14px 22px;border-radius:10px;text-decoration:none;font-weight:bold}</style></head>
+<body><div class="box"><h1>HABKA Admin</h1><p>افتح لوحة التحكم من موقع HABKA.</p><a href="index.html" onclick="localStorage.setItem('open_admin','1')">فتح لوحة الأدمن</a></div>
+<script>if(localStorage.getItem('open_admin')==='1'){localStorage.removeItem('open_admin');location.href='index.html?admin=1'}</script></body></html>

@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>مسلسلات ذكاء اصطناعي | HABKA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Cairo", sans-serif;
+            background: #060608;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+
+            height: 75px;
+
+            z-index: 999;
+
+            background: rgba(6, 6, 8, 0.78);
+
+            backdrop-filter: blur(20px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .navbar {
+            max-width: 1400px;
+            height: 100%;
+
+            margin: auto;
+
+            padding: 0 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #b85cff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .search {
+            width: 190px;
+            height: 40px;
+
+            background: #111116;
+
+            border: 1px solid #292930;
+
+            border-radius: 10px;
+
+            color: white;
+
+            padding: 0 14px;
+
+            outline: none;
+        }
+
+        .search:focus {
+            border-color: #9d4edd;
+        }
+
+        .login {
+            border: none;
+
+            background: white;
+
+            color: #000;
+
+            padding: 9px 18px;
+
+            border-radius: 9px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 760px;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 70% 45%,
+                    rgba(157,78,221,0.30),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    90deg,
+                    #060608 5%,
+                    rgba(6,6,8,0.72) 50%,
+                    #060608 100%
+                );
+        }
+
+        /* خلفية زخرفية */
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            border-radius: 50%;
+
+            background: #9d4edd;
+
+            filter: blur(180px);
+
+            opacity: 0.15;
+
+            top: 100px;
+            left: 45%;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+
+            width: 100%;
+
+            margin: auto;
+
+            padding: 130px 30px 70px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .hero-small {
+            color: #c77dff;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            margin-bottom: 18px;
+
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+
+            font-size: clamp(45px, 7vw, 88px);
+
+            line-height: 1.15;
+
+            font-weight: 900;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(
+                90deg,
+                #fff,
+                #c77dff
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text {
+            max-width: 650px;
+
+            color: #aaa;
+
+            line-height: 2;
+
+            font-size: 16px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .start-btn {
+            background: #9d4edd;
+
+            color: white;
+
+            border: none;
+
+            padding: 14px 28px;
+
+            border-radius: 10px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .start-btn:hover {
+            background: #b866ff;
+
+            transform: translateY(-3px);
+        }
+
+        .about-btn {
+            background: rgba(255,255,255,0.07);
+
+            color: white;
+
+            border: 1px solid #444;
+
+            padding: 14px 25px;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           SCROLL INDICATOR
+        ========================= */
+
+        .scroll-down {
+            position: absolute;
+
+            bottom: 30px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: #777;
+
+            font-size: 12px;
+
+            text-align: center;
+        }
+
+        .scroll-arrow {
+            display: block;
+
+            margin-top: 5px;
+
+            animation: arrow 1.5s infinite;
+        }
+
+        @keyframes arrow {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(7px);
+            }
+
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding: 0 30px 80px;
+        }
+
+        section {
+            margin-top: 65px;
+        }
+
+        .section-title {
+            margin-bottom: 25px;
+        }
+
+        .section-title h2 {
+            font-size: 27px;
+
+            font-weight: 800;
+        }
+
+        .section-title p {
+            color: #777;
+
+            font-size: 13px;
+
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           TYPES
+        ========================= */
+
+        .types {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .type {
+            min-height: 190px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            border: 1px solid #25252b;
+
+            background: #0d0d11;
+
+            padding: 30px;
+
+            cursor: pointer;
+
+            transition: 0.35s;
+        }
+
+        .type:hover {
+            transform: translateY(-8px);
+
+            border-color: #9d4edd;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.45);
+        }
+
+        .type::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: #9d4edd;
+
+            filter: blur(90px);
+
+            opacity: 0.13;
+
+            left: -50px;
+            bottom: -60px;
+        }
+
+        .type-icon {
+            font-size: 42px;
+
+            margin-bottom: 10px;
+
+            display: block;
+        }
+
+        .type h3 {
+            font-size: 23px;
+
+            margin-bottom: 5px;
+        }
+
+        .type p {
+            color: #777;
+
+            font-size: 13px;
+        }
+
+        .type-arrow {
+            position: absolute;
+
+            left: 25px;
+            bottom: 25px;
+
+            color: #aaa;
+
+            font-size: 20px;
+        }
+
+
+        /* =========================
+           SERIES
+        ========================= */
+
+        .series-section {
+            display: none;
+        }
+
+        .series-section.active {
+            display: block;
+        }
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 18px;
+        }
+
+        .card {
+            background: #101014;
+
+            border-radius: 13px;
+
+            overflow: hidden;
+
+            border: 1px solid #19191e;
+
+            transition: 0.35s;
+
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+
+            border-color: #36363e;
+        }
+
+        .poster {
+            height: 300px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .poster img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .card:hover .poster img {
+            transform: scale(1.08);
+        }
+
+        .poster::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    transparent 55%,
+                    rgba(0,0,0,.65)
+                );
+        }
+
+        .badge {
+            position: absolute;
+
+            top: 10px;
+            right: 10px;
+
+            z-index: 2;
+
+            background: #9d4edd;
+
+            padding: 4px 9px;
+
+            border-radius: 6px;
+
+            font-size: 10px;
+
+            font-weight: 800;
+        }
+
+        .play {
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 3;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            opacity: 0;
+
+            transition: 0.3s;
+        }
+
+        .card:hover .play {
+            opacity: 1;
+        }
+
+        .play-circle {
+            width: 58px;
+            height: 58px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            color: black;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 21px;
+        }
+
+        .card-info {
+            padding: 13px;
+        }
+
+        .card-info h3 {
+            font-size: 15px;
+
+            margin-bottom: 4px;
+        }
+
+        .card-info p {
+            color: #777;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           AD
+        ========================= */
+
+        .ad {
+            min-height: 100px;
+
+            margin-top: 70px;
+
+            border: 1px dashed #303038;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #444;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #040406;
+
+            border-top: 1px solid #19191e;
+
+            padding: 45px 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+
+            font-weight: 900;
+        }
+
+        .footer-logo span {
+            color: #b85cff;
+        }
+
+        .footer-text {
+            color: #666;
+
+            font-size: 12px;
+
+            margin-top: 5px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: #777;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width:1100px) {
+
+            .cards {
+                grid-template-columns:
+                    repeat(4, 1fr);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+        }
+
+
+        @media(max-width:800px) {
+
+            .types {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .cards {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .search {
+                display: none;
+            }
+
+            .hero {
+                min-height: 700px;
+            }
+
+            .hero-content {
+                padding:
+                    130px 20px 80px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero-text {
+                font-size: 14px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 25px;
+            }
+
+        }
+
+
+        @media(max-width:500px) {
+
+            header {
+                height: 65px;
+            }
+
+            .navbar {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .login {
+                padding:
+                    7px 13px;
+
+                font-size: 12px;
+            }
+
+            main {
+                padding:
+                    0 15px 60px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+
+                width: 200px;
+            }
+
+            .cards {
+                gap: 10px;
+            }
+
+            .poster {
+                height: 240px;
+            }
+
+            .card-info h3 {
+                font-size: 13px;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+            }
+
+        }
+
+    
+/* ===== HABKA ADMIN / PLAYER ===== */
+.habka-modal{position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(12px);z-index:5000;display:none;align-items:center;justify-content:center;padding:20px}
+.habka-modal.show{display:flex}
+.habka-box{width:min(950px,100%);max-height:90vh;overflow:auto;background:#0e0e13;border:1px solid #292933;border-radius:20px;padding:24px;box-shadow:0 30px 100px #000}
+.habka-box h2{margin-bottom:18px}
+.habka-form{display:grid;gap:12px}
+.habka-form input,.habka-form select,.habka-form textarea{width:100%;background:#15151c;color:#fff;border:1px solid #30303a;border-radius:10px;padding:12px;outline:none;font-family:inherit}
+.habka-form textarea{min-height:90px;resize:vertical}
+.habka-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.habka-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.habka-btn{border:0;border-radius:10px;padding:11px 16px;font-weight:800;cursor:pointer}
+.habka-primary{background:#9d4edd;color:#fff}.habka-danger{background:#b42318;color:#fff}.habka-muted{background:#25252e;color:#fff}
+.habka-admin-table{width:100%;border-collapse:collapse;margin-top:18px}
+.habka-admin-table th,.habka-admin-table td{border-bottom:1px solid #25252d;padding:10px;text-align:right}
+.habka-small{color:#888;font-size:12px}
+.habka-close{float:left;background:none;border:0;color:#aaa;font-size:24px;cursor:pointer}
+.habka-episode-list{display:grid;gap:8px;margin-top:10px}
+.habka-episode{background:#15151b;border:1px solid #292932;border-radius:10px;padding:10px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.video-modal video{width:100%;max-height:70vh;border-radius:12px;background:#000}
+@media(max-width:600px){.habka-row{grid-template-columns:1fr}.habka-box{padding:16px}}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            HABKA<span>.</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#">
+                    الرئيسية
+                </a>
+            </li>
+
+            <li>
+                <a href="#types">
+                    الأنواع
+                </a>
+            </li>
+
+            <li>
+                <a href="#series">
+                    المسلسلات
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    عن الموقع
+                </a>
+            </li>
+
+        </ul>
+
+
+        <div class="nav-right">
+
+            <input
+                type="text"
+                id="search"
+                class="search"
+                placeholder="ابحث عن مسلسل..."
+            >
+
+            <button class="login" onclick="openAdmin()">⚙️ الأدمن</button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            ✦ عالم جديد من القصص
+        </div>
+
+        <h1>
+            موقع مسلسلات
+            <span>
+                ذكاء اصطناعي
+            </span>
+        </h1>
+
+        <p class="hero-text">
+
+            شاهد قصصاً ومسلسلات مصنوعة
+            بالذكاء الاصطناعي، بحلقات مليئة
+            بالأحداث والتشويق والنهايات التي
+            لن تتوقعها.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button
+                class="start-btn"
+                onclick="goToTypes()"
+            >
+                ▶ ابدأ المشاهدة
+            </button>
+
+            <button
+                class="about-btn"
+                onclick="showAbout()"
+            >
+                عن الموقع
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="scroll-down">
+
+        انزل لاكتشاف المسلسلات
+
+        <span class="scroll-arrow">
+            ↓
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+
+    <!-- TYPES -->
+
+    <section id="types">
+
+        <div class="section-title">
+
+            <h2>
+                🎬 اختر نوع المسلسل
+            </h2>
+
+            <p>
+                اختر النوع الذي تريد مشاهدته
+            </p>
+
+        </div>
+
+
+        <div class="types">
+
+
+            <!-- HORROR -->
+
+            <div
+                class="type"
+                onclick="showCategory('horror')"
+            >
+
+                <span class="type-icon">
+                    👻
+                </span>
+
+                <h3>
+                    رعب
+                </h3>
+
+                <p>
+                    قصص مخيفة وأحداث
+                    لا تستطيع توقعها.
+                </p>
+
+                <span class="type-arrow">
+                    ←
+                </span>
+
+            </div>
+
+
+            <!-- LOVE -->
+
+            <div
+                class="type"
+                onclick="showCategory('love')"
+            >
+
+                <span class="type-icon">
+                    ❤️
+                </span>
+
+                <h3>
+                    حب
+                </h3>
+
+                <p>
+                    قصص حب ومشاعر
+                    ونهايات غير متوقعة.
+                </p>
+
+                <span class="type-arrow">
+                    ←
+                </span>
+
+            </div>
+
+
+            <!-- ACTION -->
+
+            <div
+                class="type"
+                onclick="showCategory('action')"
+            >
+
+                <span class="type-icon">
+                    🔥
+                </span>
+
+                <h3>
+                    أكشن
+                </h3>
+
+                <p>
+                    مطاردات ومواجهات
+                    وأحداث سريعة.
+                </p>
+
+                <span class="type-arrow">
+                    ←
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         HORROR SERIES
+    ========================= -->
+
+    <section
+        id="horror"
+        class="series-section"
+    >
+
+        <div class="section-title">
+
+            <h2>
+                👻 مسلسلات الرعب
+            </h2>
+
+            <p>
+                هل أنت مستعد؟
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="poster">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=700&q=85"
+                    >
+
+                    <span class="badge">
+                        AI ORIGINAL
+                    </span>
+
+                    <div class="play">
+                        <div class="play-circle">
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h3>
+                        آخر إشارة
+                    </h3>
+
+                    <p>
+                        8 حلقات • رعب
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="poster">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=85"
+                    >
+
+                    <span class="badge">
+                        جديد
+                    </span>
+
+                    <div class="play">
+                        <div class="play-circle">
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h3>
+                        الباب الأخير
+                    </h3>
+
+                    <p>
+                        6 حلقات • رعب
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="poster">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1488866022504-f2584929ca5f?auto=format&fit=crop&w=700&q=85"
+                    >
+
+                    <span class="badge">
+                        جديد
+                    </span>
+
+                    <div class="play">
+                        <div class="play-circle">
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h3>
+                        الساعة 3:17
+                    </h3>
+
+                    <p>
+                        5 حلقات • رعب
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         LOVE SERIES
+    ========================= -->
+
+    <section
+        id="love"
+        class="series-section"
+    >
+
+        <div class="section-title">
+
+            <h2>
+                ❤️ مسلسلات الحب
+            </h2>
+
+            <p>
+                قصص تجعل القلب يعيش الحكاية.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="poster">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=700&q=85"
+                    >
+
+                    <span class="badge">
+                        AI ORIGINAL
+                    </span>
+
+                    <div class="play">
+                        <div class="play-circle">
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h3>
+                        عندما التقينا
+                    </h3>
+
+                    <p>
+                        8 حلقات • حب
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="poster">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=700&q=85"
+                    >
+
+                    <span class="badge">
+                        جديد
+                    </span>
+
+                    <div class="play">
+                        <div class="play-circle">
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h3>
+                        رسالة منك
+                    </h3>
+
+                    <p>
+                        7 حلقات • حب
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="poster">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=85"
+                    >
+
+                    <span class="badge">
+                        جديد
+                    </span>
+
+                    <div class="play">
+                        <div class="play-circle">
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h3>
+                        بعد منتصف الليل
+                    </h3>
+
+                    <p>
+                        6 حلقات • حب
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ACTION SERIES
+    ========================= -->
+
+    <section
+        id="action"
+        class="series-section"
+    >
+
+        <div class="section-title">
+
+            <h2>
+                🔥 مسلسلات الأكشن
+            </h2>
+
+            <p>
+                سرعة، مطاردات ومواجهات.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="poster">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=700&q=85"
+                    >
+
+                    <span class="badge">
+                        AI ORIGINAL
+                    </span>
+
+                    <div class="play">
+                        <div class="play-circle">
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h3>
+                        المهمة الأخيرة
+                    </h3>
+
+                    <p>
+                        8 حلقات • أكشن
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="poster">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1517846693594-e60b3f4a557e?auto=format&fit=crop&w=700&q=85"
+                    >
+
+                    <span class="badge">
+                        جديد
+                    </span>
+
+                    <div class="play">
+                        <div class="play-circle">
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h3>
+                        المطاردة
+                    </h3>
+
+                    <p>
+                        6 حلقات • أكشن
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="poster">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=85"
+                    >
+
+                    <span class="badge">
+                        جديد
+                    </span>
+
+                    <div class="play">
+                        <div class="play-circle">
+                            ▶
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h3>
+                        الهروب
+                    </h3>
+
+                    <p>
+                        7 حلقات • أكشن
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         AD
+    ========================= -->
+
+    <div class="ad">
+
+        مساحة إعلانية
+
+    </div>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>
+                ✦ عن الموقع
+            </h2>
+
+            <p>
+                منصة للقصص والمسلسلات المصنوعة
+                بتقنيات الذكاء الاصطناعي.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <div class="footer-logo">
+                HABKA<span>.</span>
+            </div>
+
+            <div class="footer-text">
+                موقع مسلسلات ذكاء اصطناعي
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#">
+                الرئيسية
+            </a>
+
+            <a href="#types">
+                الأنواع
+            </a>
+
+            <a href="#about">
+                عن الموقع
+            </a>
+
+            <a href="#">
+                الخصوصية
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    /* =========================
+       START BUTTON
+    ========================= */
+
+    function goToTypes() {
+
+        document
+            .getElementById("types")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }
+
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    function showAbout() {
+
+        document
+            .getElementById("about")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    }
+
+
+
+    /* =========================
+       SHOW CATEGORY
+    ========================= */
+
+    function showCategory(category) {
+
+        const sections =
+            document.querySelectorAll(".series-section");
+
+        sections.forEach(section => {
+
+            section.classList.remove("active");
+
+        });
+
+
+        const selected =
+            document.getElementById(category);
+
+        if (selected) {
+
+            selected.classList.add("active");
+
+            selected.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    }
+
+
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    const search =
+        document.getElementById("search");
+
+
+    search.addEventListener(
+        "input",
+        function() {
+
+            const value =
+                this.value
+                .toLowerCase()
+                .trim();
+
+
+            const cards =
+                document.querySelectorAll(".card");
+
+
+            cards.forEach(card => {
+
+                const title =
+                    card
+                    .querySelector("h3")
+                    ?.textContent
+                    .toLowerCase();
+
+
+                if (
+                    !value ||
+                    title.includes(value)
+                ) {
+
+                    card.style.display = "";
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        }
+    );
+
+
+
+    /* =========================
+       CARD CLICK
+    ========================= */
+
+    const cards =
+        document.querySelectorAll(".card");
+
+
+    cards.forEach(card => {
+
+        card.addEventListener(
+            "click",
+            function() {
+
+                const title =
+                    this
+                    .querySelector("h3")
+                    .textContent;
+
+                alert(
+                    "🎬 سيتم فتح مسلسل: " +
+                    title
+                );
+
+            }
+        );
+
+    });
+
+</script>
+
+
+
+<!-- HABKA ADMIN -->
+<div id="adminModal" class="habka-modal">
+  <div class="habka-box">
+    <button class="habka-close" onclick="closeAdmin()">×</button>
+    <h2>⚙️ لوحة تحكم HABKA</h2>
+    <div id="adminLogin">
+      <p class="habka-small">تسجيل دخول الأدمن</p>
+      <div class="habka-form">
+        <input id="adminPassword" type="password" placeholder="كلمة المرور">
+        <button class="habka-btn habka-primary" onclick="adminLogin()">دخول</button>
+      </div>
+    </div>
+    <div id="adminPanel" style="display:none">
+      <div class="habka-row">
+        <div>
+          <h3>إضافة مسلسل</h3>
+          <div class="habka-form">
+            <input id="sTitle" placeholder="اسم المسلسل">
+            <select id="sCategory">
+              <option value="horror">👻 رعب</option>
+              <option value="love">❤️ حب</option>
+              <option value="action">🔥 أكشن</option>
+            </select>
+            <input id="sPoster" placeholder="رابط صورة البوستر">
+            <input id="sBadge" placeholder="الشارة مثل: جديد / AI ORIGINAL">
+            <textarea id="sDesc" placeholder="وصف المسلسل"></textarea>
+            <button class="habka-btn habka-primary" onclick="addSeries()">+ إضافة المسلسل</button>
+          </div>
+        </div>
+        <div>
+          <h3>إضافة حلقة</h3>
+          <div class="habka-form">
+            <select id="eSeries"></select>
+            <input id="eTitle" placeholder="اسم الحلقة (مثال: الحلقة 1)">
+            <input id="eVideo" placeholder="رابط الفيديو MP4 أو رابط مباشر">
+            <button class="habka-btn habka-primary" onclick="addEpisode()">+ إضافة الحلقة</button>
+            <p class="habka-small">ملاحظة: للرابط المحلي استخدم رابط ملف الفيديو بعد رفعه إلى الاستضافة. روابط file:// لا تعمل للزوار على الإنترنت.</p>
+          </div>
+        </div>
+      </div>
+      <hr style="border-color:#25252d;margin:22px 0">
+      <h3>المسلسلات الحالية</h3>
+      <div id="adminSeriesList"></div>
+      <div class="habka-actions">
+        <button class="habka-btn habka-muted" onclick="exportData()">تصدير البيانات</button>
+        <button class="habka-btn habka-muted" onclick="document.getElementById('importFile').click()">استيراد البيانات</button>
+        <button class="habka-btn habka-danger" onclick="resetData()">حذف بيانات الأدمن</button>
+        <input id="importFile" type="file" accept=".json" style="display:none" onchange="importData(event)">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO PLAYER -->
+<div id="videoModal" class="habka-modal video-modal">
+  <div class="habka-box">
+    <button class="habka-close" onclick="closeVideo()">×</button>
+    <h2 id="videoTitle">الحلقة</h2>
+    <video id="habkaVideo" controls playsinline></video>
+  </div>
+</div>
+
+
+<script>
+/* ===== HABKA ADMIN SYSTEM =====
+   Local demo storage. For a public multi-user site, connect this to a backend/database.
+*/
+const HABKA_KEY = "habka_data_v1";
+const ADMIN_PASSWORD = "1234"; // غيّرها قبل نشر الموقع
+
+const defaultData = {
+  series: [
+    {id:"h1",title:"آخر إشارة",category:"horror",poster:"https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=700&q=85",badge:"AI ORIGINAL",desc:"قصة رعب مليئة بالأحداث.",episodes:[]},
+    {id:"h2",title:"الباب الأخير",category:"horror",poster:"https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=85",badge:"جديد",desc:"أسرار خلف باب لا يجب فتحه.",episodes:[]},
+    {id:"h3",title:"الساعة 3:17",category:"horror",poster:"https://images.unsplash.com/photo-1488866022504-f2584929ca5f?auto=format&fit=crop&w=700&q=85",badge:"جديد",desc:"كل شيء يبدأ عند 3:17.",episodes:[]},
+    {id:"l1",title:"عندما التقينا",category:"love",poster:"https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=700&q=85",badge:"AI ORIGINAL",desc:"قصة حب ومشاعر.",episodes:[]},
+    {id:"l2",title:"رسالة منك",category:"love",poster:"https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=700&q=85",badge:"جديد",desc:"رسالة تغيّر كل شيء.",episodes:[]},
+    {id:"l3",title:"بعد منتصف الليل",category:"love",poster:"https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=700&q=85",badge:"جديد",desc:"حكاية تبدأ بعد منتصف الليل.",episodes:[]},
+    {id:"a1",title:"المهمة الأخيرة",category:"action",poster:"https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=700&q=85",badge:"AI ORIGINAL",desc:"سرعة ومطاردات.",episodes:[]},
+    {id:"a2",title:"المطاردة",category:"action",poster:"https://images.unsplash.com/photo-1517846693594-e60b3f4a557e?auto=format&fit=crop&w=700&q=85",badge:"جديد",desc:"مطاردة لا تتوقف.",episodes:[]},
+    {id:"a3",title:"الهروب",category:"action",poster:"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=85",badge:"جديد",desc:"الهروب من المستحيل.",episodes:[]}
+  ]
+};
+
+function getData(){
+  try { return JSON.parse(localStorage.getItem(HABKA_KEY)) || structuredClone(defaultData); }
+  catch(e){ return structuredClone(defaultData); }
+}
+function saveData(d){ localStorage.setItem(HABKA_KEY, JSON.stringify(d)); renderSite(); renderAdmin(); }
+
+const catNames={horror:"رعب",love:"حب",action:"أكشن"};
+const catTitles={horror:"👻 مسلسلات الرعب",love:"❤️ مسلسلات الحب",action:"🔥 مسلسلات الأكشن"};
+
+function renderSite(){
+  const d=getData();
+  ["horror","love","action"].forEach(cat=>{
+    const section=document.getElementById(cat);
+    if(!section) return;
+    const cards=section.querySelector(".cards");
+    cards.innerHTML="";
+    d.series.filter(s=>s.category===cat).forEach(s=>{
+      const card=document.createElement("div");
+      card.className="card";
+      card.dataset.seriesId=s.id;
+      card.innerHTML=`
+        <div class="poster">
+          <img src="${escapeAttr(s.poster || '')}" onerror="this.style.opacity='.2'">
+          <span class="badge">${escapeHtml(s.badge || "AI ORIGINAL")}</span>
+          <div class="play"><div class="play-circle">▶</div></div>
+        </div>
+        <div class="card-info">
+          <h3>${escapeHtml(s.title)}</h3>
+          <p>${s.episodes.length} حلقات • ${catNames[s.category]}</p>
+        </div>`;
+      card.onclick=()=>openSeries(s.id);
+      cards.appendChild(card);
+    });
+  });
+}
+function escapeHtml(x){return String(x??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+function escapeAttr(x){return escapeHtml(x);}
+
+function openSeries(id){
+  const s=getData().series.find(x=>x.id===id);
+  if(!s)return;
+  if(!s.episodes.length){ alert("هذا المسلسل لا يحتوي حلقات بعد."); return; }
+  const list=s.episodes.map((e,i)=>`${i+1}. ${e.title}`).join("\n");
+  const choice=prompt(`🎬 ${s.title}\n\n${list}\n\nاكتب رقم الحلقة:`);
+  const n=Number(choice)-1;
+  if(Number.isInteger(n)&&s.episodes[n]) openVideo(s.episodes[n].url,s.episodes[n].title);
+}
+function openVideo(url,title){
+  if(!url){alert("لا يوجد رابط فيديو لهذه الحلقة.");return;}
+  document.getElementById("videoTitle").textContent=title;
+  const v=document.getElementById("habkaVideo"); v.src=url;
+  document.getElementById("videoModal").classList.add("show");
+}
+function closeVideo(){
+  const v=document.getElementById("habkaVideo"); v.pause(); v.removeAttribute("src"); v.load();
+  document.getElementById("videoModal").classList.remove("show");
+}
+
+function openAdmin(){
+  document.getElementById("adminModal").classList.add("show");
+  if(sessionStorage.getItem("habka_admin")==="1") showAdminPanel();
+}
+function closeAdmin(){document.getElementById("adminModal").classList.remove("show");}
+function adminLogin(){
+  if(document.getElementById("adminPassword").value===ADMIN_PASSWORD){
+    sessionStorage.setItem("habka_admin","1"); showAdminPanel();
+  }else alert("كلمة المرور غير صحيحة");
+}
+function showAdminPanel(){
+  document.getElementById("adminLogin").style.display="none";
+  document.getElementById("adminPanel").style.display="block";
+  renderAdmin();
+}
+function renderAdmin(){
+  const list=document.getElementById("adminSeriesList"), sel=document.getElementById("eSeries");
+  if(!list||!sel)return;
+  const d=getData();
+  sel.innerHTML=d.series.map(s=>`<option value="${s.id}">${escapeHtml(s.title)}</option>`).join("");
+  list.innerHTML=d.series.map(s=>`
+    <div style="background:#121219;border:1px solid #25252e;border-radius:14px;padding:14px;margin:10px 0">
+      <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
+        <div><b>${escapeHtml(s.title)}</b><div class="habka-small">${catNames[s.category]} • ${s.episodes.length} حلقات</div></div>
+        <button class="habka-btn habka-danger" onclick="deleteSeries('${s.id}')">حذف</button>
+      </div>
+      <div class="habka-episode-list">
+        ${s.episodes.map((e,i)=>`<div class="habka-episode"><span>${i+1}. ${escapeHtml(e.title)}</span><button class="habka-btn habka-danger" onclick="deleteEpisode('${s.id}',${i})">حذف</button></div>`).join("") || '<span class="habka-small">لا توجد حلقات</span>'}
+      </div>
+    </div>`).join("");
+}
+function addSeries(){
+  const title=document.getElementById("sTitle").value.trim();
+  if(!title){alert("اكتب اسم المسلسل");return}
+  const d=getData();
+  d.series.push({
+    id:"s_"+Date.now(),title,
+    category:document.getElementById("sCategory").value,
+    poster:document.getElementById("sPoster").value.trim(),
+    badge:document.getElementById("sBadge").value.trim()||"جديد",
+    desc:document.getElementById("sDesc").value.trim(),episodes:[]
+  });
+  saveData(d);
+  ["sTitle","sPoster","sBadge","sDesc"].forEach(id=>document.getElementById(id).value="");
+  alert("تمت إضافة المسلسل ✅");
+}
+function addEpisode(){
+  const sid=document.getElementById("eSeries").value;
+  const title=document.getElementById("eTitle").value.trim();
+  const url=document.getElementById("eVideo").value.trim();
+  if(!sid||!title||!url){alert("أكمل بيانات الحلقة");return}
+  const d=getData(), s=d.series.find(x=>x.id===sid);
+  s.episodes.push({id:"e_"+Date.now(),title,url});
+  saveData(d);
+  document.getElementById("eTitle").value="";document.getElementById("eVideo").value="";
+  alert("تمت إضافة الحلقة ✅");
+}
+function deleteSeries(id){
+  if(!confirm("حذف المسلسل وكل حلقاته؟"))return;
+  const d=getData(); d.series=d.series.filter(s=>s.id!==id); saveData(d);
+}
+function deleteEpisode(sid,i){
+  const d=getData(), s=d.series.find(x=>x.id===sid);
+  if(!s)return; if(confirm("حذف الحلقة؟")){s.episodes.splice(i,1);saveData(d)}
+}
+function exportData(){
+  const blob=new Blob([JSON.stringify(getData(),null,2)],{type:"application/json"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="habka-data.json";a.click();URL.revokeObjectURL(a.href);
+}
+function importData(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.series)throw 0;saveData(d);alert("تم الاستيراد ✅")}catch(x){alert("ملف غير صالح")}};
+  r.readAsText(f); e.target.value="";
+}
+function resetData(){
+  if(confirm("سيتم حذف تعديلات الأدمن وإرجاع البيانات الافتراضية. متأكد؟")){
+    localStorage.removeItem(HABKA_KEY); renderSite(); renderAdmin();
+  }
+}
+document.addEventListener("DOMContentLoaded",()=>{renderSite(); if(location.search.includes("admin=1")) openAdmin();});
+</script>
+
+</body>
+
+</html>
